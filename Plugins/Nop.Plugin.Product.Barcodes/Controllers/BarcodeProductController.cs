@@ -316,14 +316,14 @@ namespace Nop.Plugin.Product.Barcodes.Controllers
         [AdminAuthorize]
         public ActionResult Update(BarcodeProductModel model)
         {
-            if (!_permissionService.Authorize(StandardPermissionProvider.ManagePlugins))
-                return Content("Access denied");
+           // if (!_permissionService.Authorize(StandardPermissionProvider.ManagePlugins))
+          //      return Content("Access denied");
 
             BarcodeProduct record = _barcodeArticoleService.GetById(model.Id);
 
             if (record != null)
             {
-                record.ProductId = model.Id;
+                record.ProductId = model.ProductId;
                 record.Barcode = model.Barcode;
                 _barcodeArticoleService.Update(record);
             }
@@ -346,24 +346,6 @@ namespace Nop.Plugin.Product.Barcodes.Controllers
             _barcodeArticoleService.Delete(record);
 
             return new NullJsonResult();
-        }
-
-        [HttpPost]
-        [AdminAuthorize]
-        public ActionResult Delete(int id)
-        {
-            if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
-                return Content("Access denied"); ;
-
-            BarcodeProduct record = _barcodeArticoleService.GetById(id);
-
-            if (record == null)
-                throw new ArgumentException("No record found with the specified id");
-
-            _barcodeArticoleService.Delete(record);
-            
-            return new NullJsonResult();
-        }
-       
+        }       
     }
 }

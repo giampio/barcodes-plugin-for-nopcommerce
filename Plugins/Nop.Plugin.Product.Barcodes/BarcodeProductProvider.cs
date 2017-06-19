@@ -20,7 +20,7 @@ namespace Nop.Plugin.Product.Barcodes
         private readonly BarcodeProductObjectContext _context;
 
         public BarcodeProductProvider(BarcodeProductObjectContext context)
-        { 
+        {
             _context = context;
         }
 

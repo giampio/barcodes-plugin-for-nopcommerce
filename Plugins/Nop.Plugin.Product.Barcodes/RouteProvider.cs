@@ -9,15 +9,9 @@ namespace Nop.Plugin.Product.Barcodes
         public void RegisterRoutes(RouteCollection routes)
         {
             routes.MapRoute("Nop.Plugin.Product.Barcodes.Product",
-                "barcode-product/{productId}", 
+                "product-barcodes/{productId}", 
                 new { controller = "BarcodeProduct", action = "Edit" },
                 new[] { "Nop.Plugin.Product.Barcodes.Controllers" }
-            );
-                        
-            routes.MapRoute("Nop.Plugin.Product.Barcodes.Edit",
-               "Admin/Plugins/BarcodeProduct/Edit/{productId}",
-               new { controller = "BarcodeProduct", action = "Edit" },
-               new[] { "Nop.Plugin.Product.Barcodes.Controllers" }
             );
 
             routes.MapRoute("Nop.Plugin.Product.Barcodes.GetBarcodes",
@@ -26,14 +20,20 @@ namespace Nop.Plugin.Product.Barcodes
                 new[] { "Nop.Plugin.Product.Barcodes.Controllers" }
             );
 
+            routes.MapRoute("Nop.Plugin.Product.Barcodes.Edit",
+               "ProductBarcodes/Edit/{productId}",
+               new { controller = "BarcodeProduct", action = "Edit" },
+               new[] { "Nop.Plugin.Product.Barcodes.Controllers" }
+            );
+                        
             routes.MapRoute("Nop.Plugin.Product.Barcodes.Update",
-                "Admin/Plugins/BarcodeProduct/Update",
+                "ProductBarcodes/Update",
                 new { controller = "BarcodeProduct", action = "Update" },
                 new[] { "Nop.Plugin.Product.Barcodes.Controllers" }
             );
 
             routes.MapRoute("Nop.Plugin.Product.Barcodes.Delete",
-                "Admin/Plugins/BarcodeProduct/Delete",
+                "ProductBarcodes/Delete",
                 new { controller = "BarcodeProduct", action = "Delete" },
                 new[] { "Nop.Plugin.Product.Barcodes.Controllers" }
             );           

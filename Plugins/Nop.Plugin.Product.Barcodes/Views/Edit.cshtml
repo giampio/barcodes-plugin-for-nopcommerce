@@ -60,19 +60,19 @@
                                     type: "json",
                                     transport: {
                                         read: {
-                                            url: ('@Html.Raw(Url.RouteUrl("Nop.Plugin.Product.Barcodes.GetBarcodes"))'),
+                                            url: "@Html.Raw(Url.RouteUrl("Nop.Plugin.Product.Barcodes.GetBarcodes"))",
                                             type: "POST",
                                             dataType: "json",
                                             data: addAntiForgeryToken
                                         },
                                         update: {
-                                            url: "@Html.Raw(Url.Action("Update", "BarcodeProduct", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Product.Barcodes.Controllers" }, { "area", "" } }))",
+                                            url: "@Html.Raw(Url.RouteUrl("Nop.Plugin.Product.Barcodes.Update"))",
                                             type: "POST",
                                             dataType: "json",
                                             data: addAntiForgeryToken
                                         },
                                         destroy: {
-                                            url: "@Html.Raw(Url.Action("Delete", "BarcodeProduct", new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Product.Barcodes.Controllers" }, { "area", "" } }))",
+                                            url: "@Html.Raw(Url.RouteUrl("Nop.Plugin.Product.Barcodes.Delete"))",
                                             type: "POST",
                                             dataType: "json",
                                             data: addAntiForgeryToken
