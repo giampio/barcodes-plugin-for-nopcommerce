@@ -1,0 +1,29 @@
+﻿@model IList<ProductOverviewModel>
+@using Nop.Web.Models.Catalog;
+
+@using (Html.BeginForm())
+{    
+    <input type="text" id="categoryId" />
+    <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+
+    if (Model.Count > 0)
+    {
+        <div>
+            <div class="item-grid">
+           
+
+                @foreach (var item in Model)
+                {
+                    <div>
+                        @item.Id.ToString()
+                    </div>
+                    <div>
+                        @item.Name.ToString();
+                    </div>               
+
+                }
+            </div>
+        </div>
+    }
+
+}

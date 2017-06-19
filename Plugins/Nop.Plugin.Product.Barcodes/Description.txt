@@ -1,0 +1,9 @@
+﻿Group: Multiple Barcodes
+FriendlyName: Multiple barcode for product
+SystemName: Product.Barcodes
+Version: 0.5.1
+SupportedVersions: 3.90
+Author: WebProject sas
+DisplayOrder: 1
+FileName: Nop.Plugin.Product.Barcodes.dll
+Description: This plugin allows you to have multiple barcode for a products
